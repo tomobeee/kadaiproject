@@ -130,7 +130,7 @@ class SearchView(ListView):
     model = PhotoPost
     template_name = 'search.html'
     queryset =PhotoPost.objects.order_by('-post_at')
-    paginate_by =4
+    paginate_by =6
 
     def get_queryset(self):
         query = super().get_queryset()
@@ -143,4 +143,4 @@ class SearchView(ListView):
         context = super().get_context_data(**kwargs)
         context["title"] = self.request.GET.get('title', '')
         return context
-      
+
